@@ -30,18 +30,25 @@ public class StepCounterService extends Service {
 
     private Notification notificationBuilder;
 
-    StepCounterService() {
-        notificationIntent = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), PendingIntent.FLAG_IMMUTABLE);
-        notificationBuilder = new NotificationCompat.Builder(MainApplication.getInstance(), "step_counter_noti")
-//                .setContentTitle()
-//                .setContentText()
-                .build();
+    int count = 0;
 
+    public StepCounterService() {
+        notificationIntent = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class)
+                , PendingIntent.FLAG_IMMUTABLE);
+        notificationBuilder = new NotificationCompat.Builder(MainApplication.getInstance(), "step_counter_noti")
+                .setContentTitle("만보기 앱")
+                .setContentText("오늘의 걸음 수 : " + count)
+                .setContentIntent(notificationIntent)
+                .setSmallIcon(R.mipmap.ic_launcher_round)
+                .setOngoing(true)
+                .build();
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
+
+
 
     }
 
@@ -49,6 +56,12 @@ public class StepCounterService extends Service {
     public void onDestroy() {
         super.onDestroy();
 
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+
+        return START_STICKY;
     }
 
     @Nullable

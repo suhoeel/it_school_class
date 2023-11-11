@@ -12,23 +12,23 @@ public class StepCounter {
     private SensorManager sensorManager;
     private Sensor sensor;
 
+
+
     public StepCounter(
             Context context,
             SensorEventListener sensorEventListener
     ) {
-//        this.context = context;
         this.sensorEventListener = sensorEventListener;
         sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
     }
 
     public void registerStepCounter() {
-
+        sensorManager.registerListener(sensorEventListener, sensor, SensorManager.SENSOR_DELAY_UI);
     }
 
     public void unregisterStepCounter() {
-
-
+        sensorManager.unregisterListener(sensorEventListener);
     }
 
 }
