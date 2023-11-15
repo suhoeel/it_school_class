@@ -97,6 +97,15 @@
         app:layout_constraintTop_toBottomOf="@id/text_today_goal"
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="만보기 실행/종료"
+        android:id="@+id/button_start_end"
+        app:layout_constraintTop_toTopOf="@id/guide_horizontal_bottom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
 
     <Button
         android:layout_width="wrap_content"
@@ -105,8 +114,27 @@
         android:id="@+id/button_reset"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guide_horizontal_bottom"
         app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="사용자 활동 권한 요청"
+        android:id="@+id/button_request_permission_activity_recognition"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guide_horizontal_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="푸시 권한 요청"
+        android:id="@+id/button_request_permission_push_notification"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guide_horizontal_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
