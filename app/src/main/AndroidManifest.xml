@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+<!--    추가-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:name=".MainApplication"
@@ -25,6 +27,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--    추가-->
+        <service android:name=".StepCounterService"
+            android:exported="true"
+            />
     </application>
 
 </manifest>
